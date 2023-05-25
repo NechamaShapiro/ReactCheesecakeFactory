@@ -15,7 +15,7 @@ class App extends React.Component {
                 <Routes>
                     <Route exact path='/' element={<Home />} />
                     <Route exact path='/placeorder' element={<PlaceOrder />} />
-                    <Route exact path='/orderdetails' element={<OrderDetails />} />
+                    <Route exact path='/orderdetails/:id' element={<OrderDetails />} />
                     <Route exact path='/vieworders' element={<ViewOrders />} />
                     <Route exact path='/success' element={<Success />} />
                 </Routes>

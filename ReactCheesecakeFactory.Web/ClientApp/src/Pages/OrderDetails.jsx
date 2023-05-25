@@ -10,7 +10,7 @@ const OrderDetails = () => {
 
     useEffect(() => {
         const getOrder = async () => {
-            const { data } = await axios.get(`/api/cheesecake/getorder?id=${id}`);
+            const { data } = await axios.get(`/api/cheesecake/orderdetails?id=${id}`);
             setOrder(data);
         }
 
@@ -26,13 +26,13 @@ const OrderDetails = () => {
             <div className="card text-center shadow p-3 mb-5 bg-body rounded" style={{ width: "30rem", backgroundColor: "#f8f9fa" }}>
                 <div className="card-body">
                     <h3 className="card-title fw-bold">{order.name}</h3>
-                    <p className="card-text fs-5">{order.email}</p>
-                    <p className="card-text fs-5">{order.baseFlavor}</p>
-                    <p className="card-text fs-5">{order.toppings || 'N/A'}</p>
-                    <p className="card-text fs-5">{order.specialRequests || 'N/A'}</p>
-                    <p className="card-text fs-5">{order.quantity}</p>
-                    <p className="card-text fs-5">{dayjs(order.deliveryDate).format('MM/DD/YYYY')}</p>
-                    <p className="card-text fs-5">{`$${order.total.toFixed(2)}`}</p>
+                    <p className="card-text fs-5 fw-bold">{order.email}</p>
+                    <p className="card-text fs-5">Base Flavor: {order.baseFlavor}</p>
+                    <p className="card-text fs-5">Toppings: {order.toppings || 'N/A'}</p>
+                    <p className="card-text fs-5">Special Requests: {order.specialRequests || 'N/A'}</p>
+                    <p className="card-text fs-5">Quantity: {order.quantity}</p>
+                    <p className="card-text fs-5">Delivery Date: {dayjs(order.deliveryDate).format('MM/DD/YYYY')}</p>
+                    <p className="card-text fs-5">Total: {`$${order.total.toFixed(2)}`}</p>
                 </div>
                 <Link to='/vieworders'>
                     <button className='btn btn-primary w-100'>Back to Orders</button>

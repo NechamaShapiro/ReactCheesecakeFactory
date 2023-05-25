@@ -36,9 +36,7 @@ const ViewOrders = () => {
                             <Link to={`/orderdetails/${order.id}`}>
                                 {order.name}
                             </Link>
-                            {/* <Link to={`/placeorder`}>
-                                {order.name}
-                            </Link> */}
+                            
                         </td>
                         <td style={{ paddingTop: "15px", paddingBottom: "15px" }}>
                             {order.email}
